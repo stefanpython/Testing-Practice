@@ -28,3 +28,17 @@ describe("calculator", () => {
     expect(calculator.multiply(4, 2)).toBe(8);
   });
 });
+
+describe("caesarCipher", () => {
+  it("should return ciphered string", () => {
+    expect(caesarCipher("HELLO WORLD", 3)).toBe("KHOOR ZRUOG");
+  });
+
+  it("should be wrapping from z to a", () => {
+    expect(caesarCipher("azazel", 5)).toBe("fefejq");
+  });
+
+  it("should work with punctuation", () => {
+    expect(caesarCipher("optimist, realist!", 10)).toBe("yzdswscd, bokvscd!");
+  });
+});
