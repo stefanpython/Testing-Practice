@@ -2,6 +2,7 @@ const capitalize = require("./capitalize");
 const reverseString = require("./reverseString");
 const calculator = require("./calculator");
 const caesarCipher = require("./caesarCipher");
+const analyzeArray = require("./analyzeArray");
 
 test("capitalize first character", () => {
   expect(capitalize("cat")).toBe("Cat");
@@ -40,5 +41,16 @@ describe("caesarCipher", () => {
 
   it("should work with punctuation", () => {
     expect(caesarCipher("optimist, realist!", 10)).toBe("yzdswscd, bokvscd!");
+  });
+});
+
+describe("analyzeArray", () => {
+  it("should return average, min, max and length", () => {
+    expect(analyzeArray([1, 8, 3, 4, 2, 6])).toStrictEqual({
+      average: 4,
+      min: 1,
+      max: 8,
+      length: 6,
+    });
   });
 });
